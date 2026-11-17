@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#101c35" />
+    <meta
+      name="description"
+      content="Sebuah surat kecil dan ucapan ulang tahun untuk Binaa."
+    />
+    <title>For Binaa — A little letter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&family=DM+Sans:wght@400;500;600;700&family=Great+Vibes&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="ambient ambient-one" aria-hidden="true"></div>
+    <div class="ambient ambient-two" aria-hidden="true"></div>
+
+    <main>
+      <section class="scene intro-scene is-active floral-page" id="intro-scene" aria-labelledby="intro-title">
+        <div class="intro-copy">
+          <p class="eyebrow"><span></span> A LETTER FOR YOU <span></span></p>
+          <h1 id="intro-title">Sesuatu kecil,<br /><em>untuk hari ini.</em></h1>
+          <p class="intro-note">Ada surat yang sudah lama ingin kusampaikan.</p>
+        </div>
+
+        <div class="envelope-wrap">
+          <div class="envelope" id="envelope">
+            <div class="envelope-back"></div>
+            <div class="letter-peek">
+              <span class="letter-mark">for you</span>
+              <span class="letter-lines"></span>
+              <span class="letter-lines short"></span>
+            </div>
+            <div class="envelope-front"></div>
+            <div class="envelope-flap"></div>
+            <div class="tear-seam" aria-hidden="true"></div>
+            <div class="seal" aria-hidden="true"></div>
+          </div>
+          <button class="primary-button tear-button" id="tear-button" type="button">
+            <span>Robek suratnya</span><span class="button-arrow" aria-hidden="true">↗</span>
+          </button>
+          <p class="hint">pelan-pelan, ya</p>
+        </div>
+      </section>
+
+      <section class="scene question-scene floral-page" id="question-scene" aria-labelledby="question-title" hidden>
+        <div class="question-card" id="question-card">
+          <span class="card-sparkle" aria-hidden="true">✦</span>
+          <p class="eyebrow">A LITTLE QUESTION</p>
+          <h2 id="question-title" tabindex="-1">Do you really want<br />to open this?</h2>
+          <p class="question-note">Pilih yang paling terasa benar untukmu.</p>
+          <div class="choice-row">
+            <button class="primary-button choice-button" data-choice="yes" type="button">
+              Yes, why not? <span aria-hidden="true">↗</span>
+            </button>
+            <button class="secondary-button choice-button" data-choice="no" type="button">
+              No, thank you
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="scene no-scene floral-page" id="no-scene" aria-labelledby="no-title" hidden>
+        <div class="goodbye-card">
+          <span class="tiny-star" aria-hidden="true">✦</span>
+          <p class="eyebrow">THAT'S ALRIGHT</p>
+          <h2 id="no-title">No problem, thank you<br />for opening this.</h2>
+          <p class="goodbye-copy">I hope you have a good day.</p>
+          <p class="signature">see you</p>
+        </div>
+      </section>
+
+      <section class="scene birthday-scene floral-page" id="birthday-scene" aria-labelledby="birthday-title" hidden>
+        <div class="birthday-content">
+          <p class="eyebrow"><span></span> TODAY IS YOUR DAY <span></span></p>
+          <p class="birthday-kicker">a little wish, just for you</p>
+          <h2 id="birthday-title">Happy Birthday,<br /><em>Sabrina Elkhansa A. P.</em></h2>
+          <div class="gold-divider"><span>✦</span></div>
+          <p class="song-label">A song for you</p>
+          <div class="music-card">
+            <img
+              class="music-art"
+              src="https://i.ibb.co.com/m5yGsJqS/Screenshot-2026-11-17-104844.png"
+              alt="Logo lagu"
+            />
+            <div class="track-info">
+              <span class="track-title">About You</span>
+              <span class="track-artist">by The 1975</span>
+            </div>
+            <button class="play-button" id="play-button" type="button" aria-label="Putar lagu">
+              <span class="play-icon" aria-hidden="true">▶</span>
+            </button>
+          </div>
+          <p class="play-status" id="play-status" aria-live="polite">
+            Putar lagunya, lalu kita lanjutkan.
+          </p>
+          <audio
+            id="birthday-audio"
+            preload="none"
+            src="assets/WhatsApp%20Video%202026-11-17%20at%2010.43.43%20AM.wav"
+          ></audio>
+          <p class="scroll-hint" id="scroll-hint" hidden>suratmu menunggu di bawah <span>↓</span></p>
+        </div>
+      </section>
+
+      <section class="letters-scene" id="letters-scene" aria-labelledby="letters-title" hidden>
+        <div class="letters-heading">
+          <p class="eyebrow"><span></span> A FEW WORDS FROM ME <span></span></p>
+          <h2 id="letters-title">Untuk dikenang,<br /><em>dan disimpan baik-baik.</em></h2>
+        </div>
+        <div class="letters-gallery">
+          <div class="letters-stack">
+            <article class="aged-paper paper-one floral-page" id="paper-one">
+              <div class="paper-topline"><span>UNTUK BINAA</span><span>SEBUAH SURAT</span></div>
+              <div class="paper-body">
+                <p>haii binaa apa kabar? kalo baik bagus ohh iyaa mungkin kamu tau siapa aku, aku harap kamu baca ini sih. aku di sini cuman mau ngucapin happy birthday yang ke 16 binn. semoga sehat selalu, dimudahkan rezekinya, dilancarkan segala urusannya. ohh iyaa btw gimana di 78 asik gaa? yaa udah pasti asik sihh, aku ngeliat kamu yang sekarang juga keliatan banget happy-nya hahahaha.</p>
+                <p>mungkin aneh kalo akuu masih ngasih surat gini ke kamu, tapi aku berharap kamu bakal baca surat ini sih. mungkin kamu masih benci/gasuka sama aku, tapi aku gabakal lupain kamu ko cuman karena kamu benci akuu, dan juga i'm really sorry for what happened to you because of me. bohong kalo aku ga kangen kamu bin. i'm still here waiting for you dan gapernah berubah selama apapun itu. ya mungkin kamu gabakal suka kalo ditungguin aku, tapi kamu itu perwujudan dari doa-doa aku bin.</p>
+                <p>oiyaa aku juga pengen minta maaf karena bikin kamu risih. mintaa maaf sebesar-besarnya buat itu dan hal lain yang aku perbuat. yaa intinya aku mintaa maaf yaa.</p>
+                <p>dann pas kamu suruh aku berubah aku sadar apa yang harus aku rubah dan yap aku berhasil bin, aku berhasil berubah tapi gabisa nunjukin ke kamu perubahan aku karna kamu lebih fokus ke salah ku dari pada perubahan kuu jadi yaa gitu dehh hehe.</p>
+                <p>kadang tmn-tmn kamu bilang ke aku untuk lupain kamu dan buka lembaran baru. aku jawab iya tapi i lied. i cant bring myself to forget you, i cant imagine living without you, i want to spend my life with you and i want you comeback to me. and when love finds me again i hope it's you, but let me fix myself first so that i can offer you the best version of me. if you want, wait for me please.</p>
+                <p>kaya nya udah yaa segitu aja. sekali lagi happy birthday bina, wish you all the best and I will wait for you sabrina.</p>
+              </div>
+              <p class="paper-signature">-Arby.</p>
+            </article>
+          </div>
+        </div>
+        <footer class="ending-note">Semoga hari-harimu selalu dipenuhi hal-hal baik <span>✦</span></footer>
+      </section>
+    </main>
+  </body>
+</html>
