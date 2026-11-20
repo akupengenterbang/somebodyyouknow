@@ -1,10 +1,6 @@
 const tearButton = document.querySelector("#tear-button");
 const envelope = document.querySelector("#envelope");
 const introScene = document.querySelector("#intro-scene");
-const questionScene = document.querySelector("#question-scene");
-const questionCard = document.querySelector("#question-card");
-const choiceButtons = document.querySelectorAll(".choice-button");
-const noScene = document.querySelector("#no-scene");
 const birthdayScene = document.querySelector("#birthday-scene");
 const playButton = document.querySelector("#play-button");
 const audio = document.querySelector("#birthday-audio");
@@ -13,12 +9,9 @@ const lettersScene = document.querySelector("#letters-scene");
 const scrollHint = document.querySelector("#scroll-hint");
 
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-let choiceMade = false;
 
 const flowerPhotosByPage = {
   "intro-scene": ["assets/photo-blue-bouquet.png", "assets/photo-blue-lily.png", "assets/photo-blue-roses.png", "assets/photo-blue-blossoms.png", "assets/photo-blue-flower.png"],
-  "question-scene": ["assets/photo-blue-lily.png", "assets/photo-blue-flower.png", "assets/photo-blue-bouquet.png", "assets/photo-blue-roses.png", "assets/photo-blue-blossoms.png"],
-  "no-scene": ["assets/photo-blue-roses.png", "assets/photo-blue-blossoms.png", "assets/photo-blue-lily.png", "assets/photo-blue-flower.png", "assets/photo-blue-bouquet.png"],
   "birthday-scene": ["assets/photo-blue-blossoms.png", "assets/photo-blue-bouquet.png", "assets/photo-blue-flower.png", "assets/photo-blue-lily.png", "assets/photo-blue-roses.png"],
   "paper-one": ["assets/photo-blue-flower.png", "assets/photo-blue-bouquet.png", "assets/photo-blue-roses.png", "assets/photo-blue-lily.png", "assets/photo-blue-blossoms.png"],
 };
@@ -47,29 +40,11 @@ tearButton.addEventListener("click", () => {
   envelope.classList.add("is-torn");
 
   window.setTimeout(() => {
-    introScene.hidden = true;
-    questionScene.hidden = false;
-    document.querySelector("#question-title").focus?.();
+    introScene.remove();
+    birthdayScene.hidden = false;
+    birthdayScene.classList.add("slide-right");
+    window.scrollTo({ top: 0, behavior: reducedMotion ? "auto" : "smooth" });
   }, 950);
-});
-
-choiceButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    if (choiceMade) return;
-    choiceMade = true;
-
-    const choice = button.dataset.choice;
-    button.classList.add("is-selected");
-    questionCard.classList.add("zoom-out");
-
-    window.setTimeout(() => {
-      questionScene.hidden = true;
-      const nextScene = choice === "yes" ? birthdayScene : noScene;
-      nextScene.hidden = false;
-      nextScene.classList.add(choice === "yes" ? "slide-right" : "slide-left");
-      window.scrollTo({ top: 0, behavior: reducedMotion ? "auto" : "smooth" });
-    }, 520);
-  });
 });
 
 playButton.addEventListener("click", async () => {
